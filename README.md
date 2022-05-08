@@ -1,6 +1,6 @@
 # A Redux-Saga Router for React
 
-![alt text](https://raw.githubusercontent.com/infonomic/redux-saga-router/main/router.svg)
+![a router's journey through space](https://raw.githubusercontent.com/infonomic/redux-saga-router/main/router.svg)
 
 This is the 'lib' and boilerplate project for our redux-saga-based router for react.
 
