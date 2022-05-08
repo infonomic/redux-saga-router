@@ -1,7 +1,7 @@
 {
   "name": "redux-saga-router",
   "version": "0.1.0",
-  "license" : "MIT",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -14,7 +14,9 @@
     "react-redux": "^8.0.1",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
     "redux-saga": "^1.1.3",
+    "redux-thunk": "^2.4.1",
     "reselect": "^4.1.5",
     "web-vitals": "^2.1.4"
   },

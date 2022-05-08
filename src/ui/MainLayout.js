@@ -25,6 +25,9 @@ function MainLayout() {
                     <RouterLink to={L.News.news()} mode={CLEAR} exact>
                         News
                     </RouterLink>
+                    <RouterLink to={L.Session.signIn()} mode={CLEAR} exact>
+                        Sign In
+                    </RouterLink>
                 </div>
             </div>
     )
