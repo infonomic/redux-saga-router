@@ -1,9 +1,11 @@
 import React from 'react'
 
-const NewsPage = () => (
+function NewsPage() {
+  return (
     <div>
-        <h1>News Page</h1>
+      <h1>News Page</h1>
     </div>
-)
+  )
+}
 
 export default NewsPage

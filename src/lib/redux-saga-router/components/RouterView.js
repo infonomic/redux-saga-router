@@ -10,26 +10,26 @@
  * displayed).
  */
 
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
 import { RouterContext } from '../router'
 import { selectCurrentLocation } from '../redux/selectors'
 
 function RouterView({ name, defaultComponent }) {
-    const { routes } = useContext(RouterContext)
-    const Component = useSelector((state) => {
-        const currentLocation = selectCurrentLocation(state)
-        if (currentLocation) {
-            return (
-                routes[currentLocation.name].components[name] ||
-                defaultComponent
-            )
-        } else {
-            return null
-        }
-    })
+  const { routes } = useContext(RouterContext)
+  const Component = useSelector(state => {
+    const currentLocation = selectCurrentLocation(state)
+    if (currentLocation) {
+      return (
+        routes[currentLocation.name].components[name]
+                || defaultComponent
+      )
+    } else {
+      return null
+    }
+  })
 
-    return Component ? <Component /> : null
+  return Component ? <Component /> : null
 }
 
 export default RouterView

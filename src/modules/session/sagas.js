@@ -7,7 +7,7 @@ import { mutations, tasks } from './actions'
 export const sagas = {
   * signIn({ payload: { data } }) {
     yield put(mutations.signInStart())
-    
+
     // Fake auth details. Implement your authn strategy here
     try {
       const user = {
@@ -31,7 +31,7 @@ export const sagas = {
 
       yield put(mutations.signInSuccess({ user, abilities, version }))
 
-       // Notify with your messaging / alert/ toast system
+      // Notify with your messaging / alert/ toast system
 
       // Figure out correct location for redirecting after sign-in
       const redirectLocation = yield select(state => {
