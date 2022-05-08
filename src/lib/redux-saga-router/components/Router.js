@@ -4,9 +4,9 @@
 
 import { useEffect, useMemo } from 'react'
 import { useStore } from 'react-redux'
-import { RouterContext } from '.'
+import { RouterContext } from '../router'
 import { navigate } from '../redux'
-import createRouterContext from './createRouterContext'
+import createRouterContext from '../router/createRouterContext'
 
 function Router({ routes, children }) {
     const context = useMemo(() => createRouterContext(routes), [routes])

@@ -12,7 +12,7 @@
 
 import { useContext } from 'react'
 import { useSelector } from 'react-redux'
-import { RouterContext } from '.'
+import { RouterContext } from '../router'
 import { selectCurrentLocation } from '../redux/selectors'
 
 function RouterView({ name, defaultComponent }) {

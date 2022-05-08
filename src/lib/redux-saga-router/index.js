@@ -1,3 +1,4 @@
+export * from './components'
 export * from './locations'
 export * from './hooks'
 export * from './redux'
