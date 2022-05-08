@@ -7,25 +7,21 @@ import {
 
 export function* watchers(routes, prefix) {
   // eslint-disable-next-line require-yield
-  yield takeLatest(
-    SET_LOCATION,
-    // eslint-disable-next-line require-yield
-    function* updateLocation({ payload: { to } }) {
-      let { path } = to
-      if (prefix && prefix !== '/') {
-        if (path === '/') {
-          path = prefix
-        } else {
-          path = `${prefix}${path}`
-        }
-      }
-      window.history.replaceState(to, '', path)
-      const route = routes[to.name]
-      if (!route.noScrollToTop) {
-        window.scrollTo(0, 0)
+  yield takeLatest(SET_LOCATION, function* updateLocation({ payload: { to } }) {
+    let { path } = to
+    if (prefix && prefix !== '/') {
+      if (path === '/') {
+        path = prefix
+      } else {
+        path = `${prefix}${path}`
       }
     }
-  )
+    window.history.replaceState(to, '', path)
+    const route = routes[to.name]
+    if (!route.noScrollToTop) {
+      window.scrollTo(0, 0)
+    }
+  })
 
   yield takeLeading(NAVIGATE, function* handleNavigation(action) {
     const {
