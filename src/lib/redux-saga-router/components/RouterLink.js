@@ -1,3 +1,7 @@
+/**
+ * An example RouterLink component
+ *
+ */
 import React, { useCallback, forwardRef } from 'react'
 
 import { useDispatch } from 'react-redux'
