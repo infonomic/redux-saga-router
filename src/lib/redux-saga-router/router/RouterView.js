@@ -6,13 +6,13 @@
  * RouterView's name, falling back to the (optional) defaultComponent if the
  * route doesn't have a component with that name.  If there is no current
  * location, or if the component above is null/undefined, fall-back to
- * displaying the children of this routerview (which otherwise will not be
+ * displaying the children of this RouterView (which otherwise will not be
  * displayed).
  */
 
 import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
-import { RouterContext } from '../router'
+import { RouterContext } from '.'
 import { selectCurrentLocation } from '../redux/selectors'
 
 function RouterView({ name, defaultComponent }) {

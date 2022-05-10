@@ -5,7 +5,7 @@ import React, { useEffect, useMemo } from 'react'
  */
 import { useStore } from 'react-redux'
 import { createSelector } from 'reselect'
-import { RouterContext } from '../router'
+import { RouterContext } from '.'
 import { navigate, selectCurrentLocation, selectLocationStack } from '../redux'
 
 const createRouterContext = routes => {
