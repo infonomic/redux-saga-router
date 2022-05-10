@@ -31,6 +31,12 @@ Open [http://localhost:3006](http://localhost:3006) to view it in your browser.
 
 This boiler plate project was created with  Create React App https://reactjs.org/docs/create-a-new-react-app.html
 
+### TODO
+- Improve docs
+- Tests!
+- Refactor
+- Create an npm module
+
 Copyright © 2022 Infonomic Company Limited 
 
 MIT License
