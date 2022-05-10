@@ -2,7 +2,7 @@
 
 ![a router's journey through space](https://raw.githubusercontent.com/infonomic/redux-saga-router/main/router.svg)
 
-This is the 'lib' and boilerplate project for our redux-saga-based router for react.
+This is the 'lib' and boilerplate project for our Redux-Saga-based router for React.
 
 Clone the repo, install the dependencies, and enjoy.
 
