@@ -5,7 +5,7 @@
 
 import { difference } from 'lodash'
 
-const prepareRoutes = routeList => {
+export const prepareRoutes = routeList => {
   const routes = {}
   routeList.forEach(route => {
     const { name } = route.template
@@ -36,5 +36,3 @@ const prepareRoutes = routeList => {
 
   return routes
 }
-
-export default prepareRoutes

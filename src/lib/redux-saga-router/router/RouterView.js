@@ -12,10 +12,10 @@
 
 import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
-import { RouterContext } from '.'
+import { RouterContext } from './RouterContext'
 import { selectCurrentLocation } from '../redux/selectors'
 
-function RouterView({ name, defaultComponent }) {
+export function RouterView({ name, defaultComponent }) {
   const { routes } = useContext(RouterContext)
   const Component = useSelector(state => {
     const currentLocation = selectCurrentLocation(state)
@@ -31,5 +31,3 @@ function RouterView({ name, defaultComponent }) {
 
   return Component ? <Component /> : null
 }
-
-export default RouterView

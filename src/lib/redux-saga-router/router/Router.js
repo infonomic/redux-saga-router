@@ -5,7 +5,7 @@ import React, { useEffect, useMemo } from 'react'
  */
 import { useStore } from 'react-redux'
 import { createSelector } from 'reselect'
-import { RouterContext } from '.'
+import { RouterContext } from './RouterContext'
 import { navigate, selectCurrentLocation, selectLocationStack } from '../redux'
 
 const createRouterContext = routes => {
@@ -60,7 +60,7 @@ const createRouterContext = routes => {
   }
 }
 
-function Router({ routes, children }) {
+export function Router({ routes, children }) {
   const context = useMemo(() => createRouterContext(routes), [routes])
 
   const store = useStore()
@@ -88,5 +88,3 @@ function Router({ routes, children }) {
     </RouterContext.Provider>
   )
 }
-
-export default Router
