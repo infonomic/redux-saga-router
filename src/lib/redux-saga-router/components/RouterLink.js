@@ -1,5 +1,7 @@
 /**
- * An example RouterLink component
+ * An example RouterLink component for use with the redux-saga-router.
+ * You might create components like this, or even RouterButton,
+ * or RouterMenuItem etc.
  *
  */
 import React, { useCallback, forwardRef } from 'react'
