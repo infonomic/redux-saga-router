@@ -1,8 +1,19 @@
 import React from 'react'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { tasks } from 'modules/session/actions'
 import { CLEAR, RouterLink, RouterView } from '../lib/redux-saga-router'
+
 import * as L from '../locationTemplates'
 
 function MainLayout() {
+  const dispatch = useDispatch()
+  const signedIn = useSelector(state => !!state.session.user)
+
+  const handleSignOut = () => {
+    dispatch(tasks.signOut())
+  }
+
   return (
     <div
       style={{
@@ -26,9 +37,19 @@ function MainLayout() {
         <RouterLink to={L.News.news()} mode={CLEAR} exact>
           News
         </RouterLink>
-        <RouterLink to={L.Session.signIn()} mode={CLEAR} exact>
-          Sign In
-        </RouterLink>
+        {
+        signedIn
+          ? (
+            <button type="button" onClick={handleSignOut}>
+              Sign Out
+            </button>
+          )
+          : (
+            <RouterLink to={L.Session.signIn()} mode={CLEAR} exact>
+              Sign In
+            </RouterLink>
+          )
+        }
       </div>
     </div>
   )
