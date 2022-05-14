@@ -1,13 +1,13 @@
 import { createAction } from 'store/helpers'
 
 export const mutations = {
-  signInStart: createAction('session/signInStart'),
-  signInSuccess: createAction('session/signInSuccess'),
-  signInFailure: createAction('session/signInFailure'),
+  signInStarted: createAction('session/signInStarted'),
+  signInSucceeded: createAction('session/signInSucceeded'),
+  signInFailed: createAction('session/signInFailed'),
 
-  signOutStart: createAction('session/signOutStart'),
-  signOutSuccess: createAction('session/signOutSuccess'),
-  signOutFailure: createAction('session/signOutFailure'),
+  signOutStarted: createAction('session/signOutStarted'),
+  signOutSucceeded: createAction('session/signOutSucceeded'),
+  signOutFailed: createAction('session/signOutFailed'),
 }
 
 // Tasks (redux actions for triggering sagas etc)

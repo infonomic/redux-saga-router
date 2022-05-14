@@ -2,50 +2,54 @@ import { createReducer } from 'store/helpers'
 import { mutations } from './actions'
 
 const initialState = {
+  signInStatus: 'idle', // busy, succeeded, failed
+  signOutStatus: 'idle', // busy, succeeded, failed,
   initialized: false,
   user: null,
   abilities: [],
-  signInActive: false,
-  signOutActive: false,
   version: {},
 }
 
 const sessionReducer = createReducer(initialState, {
-  [mutations.signInStart]: (state, action) => ({
+  [mutations.signInStarted]: (state, action) => ({
     ...state,
-    signInActive: true,
+    signInStatus: 'busy',
   }),
-  [mutations.signInSuccess]: (state, action) => ({
+
+  [mutations.signInSucceeded]: (state, action) => ({
     ...state,
-    signInActive: false,
+    signInStatus: 'idle',
     initialized: true,
     user: action.payload.user,
     abilities: action.payload.abilities,
     version: action.payload.version,
   }),
-  [mutations.signInFailure]: (state, action) => ({
+
+  [mutations.signInFailed]: (state, action) => ({
     ...state,
-    signInActive: false,
+    signInStatus: 'failed',
     initialized: true,
     user: null,
     abilities: [],
   }),
 
-  [mutations.signOutStart]: (state, action) => ({
+  [mutations.signOutStarted]: (state, action) => ({
     ...state,
-    signOutActive: true,
+    signOutStatus: 'busy',
   }),
-  [mutations.signOutSuccess]: (state, action) => ({
+
+  [mutations.signOutSucceeded]: (state, action) => ({
     ...state,
-    signOutActive: false,
+    signOutStatus: 'idle',
     initialized: true,
     user: null,
     abilities: [],
     version: {},
   }),
-  [mutations.signOutFailure]: (state, action) => ({
+
+  [mutations.signOutFailed]: (state, action) => ({
     ...state,
-    signOutActive: false,
+    signOutStatus: 'failed',
   }),
 })
 

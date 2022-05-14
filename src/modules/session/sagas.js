@@ -6,7 +6,7 @@ import { mutations, tasks } from './actions'
 
 export const sagas = {
   * signIn({ payload: { data } }) {
-    yield put(mutations.signInStart())
+    yield put(mutations.signInStarted())
 
     // Fake auth details. Implement your authn strategy here
     try {
@@ -29,7 +29,7 @@ export const sagas = {
 
       const version = '1.0.0'
 
-      yield put(mutations.signInSuccess({ user, abilities, version }))
+      yield put(mutations.signInSucceeded({ user, abilities, version }))
 
       // Notify with your messaging / alert/ toast system
 
@@ -48,19 +48,19 @@ export const sagas = {
       yield put(navigate(redirectLocation))
       // Notify with your messaging / alert/ toast system
     } catch (error) {
-      yield put(mutations.signInFailure())
+      yield put(mutations.signInFailed())
       // Notify with your messaging / alert/ toast system
     }
   },
 
   * signOut() {
-    yield put(mutations.signOutStart())
+    yield put(mutations.signOutStarted())
     try {
-      yield put(mutations.signOutSuccess())
+      yield put(mutations.signOutSucceeded())
       yield put(navigate(L.Session.signIn()))
       // Notify with your messaging / alert/ toast system
     } catch (error) {
-      yield put(mutations.signOutFailure())
+      yield put(mutations.signOutFailed())
       // Notify with your messaging / alert/ toast system
     }
   },
