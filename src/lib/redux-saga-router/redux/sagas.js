@@ -7,7 +7,8 @@ import {
 
 export function* watchers(routes, prefix) {
   // eslint-disable-next-line require-yield
-  yield takeLatest(SET_LOCATION, function* updateLocation({ payload: { to } }) {
+  yield takeLatest(SET_LOCATION, function* updateLocation(action) {
+    const { payload: { to } } = action
     let { path } = to
     if (prefix && prefix !== '/') {
       if (path === '/') {
@@ -24,9 +25,7 @@ export function* watchers(routes, prefix) {
   })
 
   yield takeLeading(NAVIGATE, function* handleNavigation(action) {
-    const {
-      payload: { to, mode },
-    } = action
+    const { payload: { to, mode } } = action
     const route = routes[to.name]
     if (route.saga) {
       yield call(route.saga, action)
